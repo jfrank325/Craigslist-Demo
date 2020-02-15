@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="src.js"></script>
+    <script type="text/javascript" src="craigslist (2).json"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Lacquer|Lato|Nunito|Roboto&display=swap" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="src.js"></script>
+    <h1 class="h1">TEEEEST</h1>
+    <div class="card">
+      <img
+        src="https://images.pexels.com/photos/1669799/pexels-photo-1669799.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        alt="Avatar"
+        style="width:100%"
+      />
+      <div class="container">
+        <h4><b>John Doe</b></h4>
+        <p>Architect & Engineer</p>
+      </div>
+    </div>
+
+    <button type="button" class="collapsible">Open Collapsible</button>
+    <div class="content">
+      <p>Lorem ipsum...</p>
+    </div>
+
+    <style>
+      .collapsible {
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+
+      .active,
+      .collapsible:hover {
+        background-color: #555;
+      }
+
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+      }
+    </style>
+
+    <h2>Collapsibles</h2>
+
+    <p>Room Info:</p>
+    <button type="button" class="collapsible">
+      Beautiful Room in Prenzlauer Berg
+    </button>
+    <div class="content">
+      <p class="roominfo">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </p>
+    </div>
+    <button type="button" class="collapsible">Open Section 2</button>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </p>
+    </div>
+    <button type="button" class="collapsible">Open Section 3</button>
+    <div class="content">
+      <p class="roominfo">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </p>
+    </div>
+  </body>
+</html>
+<script>
+  var coll = document.getElementsByClassName('collapsible');
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener('click', function() {
+      this.classList.toggle('active');
+      var content = this.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+  }
+
+  var obj = JSON.parse(`{
+      "id": "7073147010",
+      "url": "https://berlin.craigslist.org/roo/d/stylish-room-for-rent-in-modern-shared/7073147010.html",
+      "date": "2020-02-15 12:13",
+      "description": "Stylish rOOM fOR rENT iN mODERN sHARED aPARTMENT wITH sIX bEDRooms In",
+      "price": "\u20ac550",
+      "hood": " Ritterlandweg",
+      "housing": ""
+    }`);
+
+  document.querySelector('h1').innerHTML = 'Room Info ' + obj.name;
+
+  //   obj.items.forEach(function(obj, i) {
+  //     document.getElementById("h1").innerHTML = "Room Info " + obj[0].name;
+  //   });
+</script>
